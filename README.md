@@ -45,7 +45,6 @@ API desenvolvida em **NestJS** que recebe pedidos com produtos e suas dimensões
 
 ## 📄 Resposta Esperada
 
-```json
 [
   {
     "orderId": "pedido1",
@@ -71,5 +70,3 @@ API desenvolvida em **NestJS** que recebe pedidos com produtos e suas dimensões
     ]
   }
 ]
-
-
