@@ -1,7 +1,7 @@
-# Imagem base
-FROM node:18-alpine
+# Imagem base (Debian, mais compatível)
+FROM node:18
 
-# Define diretório de trabalho
+# Diretório do app
 WORKDIR /app
 
 # Copia package.json e package-lock.json
@@ -13,11 +13,12 @@ RUN npm install
 # Copia o restante do código
 COPY . .
 
-# Compila o NestJS para dist/
-RUN npm run build
+# Build usando npx (Nest CLI local)
+RUN npx nest build
 
-# Exponha a porta do NestJS
+# Expõe a porta do NestJS
 EXPOSE 3000
 
-# Comando para rodar em produção
+# Rodar app
 CMD ["node", "dist/main.js"]
+
